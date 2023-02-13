@@ -3,6 +3,7 @@ import Slider from '../Slider/Slider';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import Categories from '../Categories/Categories';
 import './Home.scss';
+import Contact from '../Contact/Contact';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <FeaturedProducts type='Featured'/> 
       <Categories/>
       <FeaturedProducts type='Trending'/> 
+      <Contact/>
     </div>
   )
 }
