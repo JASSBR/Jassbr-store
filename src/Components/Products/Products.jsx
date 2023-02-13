@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card';
+import './Products.scss';
 
 const Products = () => {
 
@@ -57,9 +58,10 @@ const Products = () => {
             <h3>Filter by price</h3>
             <input type="range" name="price" id="price" minLength={0} maxLength={100} />
             <h3>Sort by</h3>
+            <div className="radio">
             <input type="radio" value="Lowest" name="order" /> Price(Lowest first)
             <input type="radio" value="Highest" name="order" /> Price(Highest first)
-  
+            </div>
         </div>
         <div className="right">
             <div className="cover">
