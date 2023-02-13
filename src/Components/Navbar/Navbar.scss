@@ -1,0 +1,51 @@
+.Navbar{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        
+        
+        a{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            
+        }
+    }
+    .center{
+    span{
+        font-weight: 500;
+    }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .cart{
+            position: relative;
+            span{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15px;
+                height: 16px;
+                top: -7px;
+                left: 12px;
+                background-color: cornflowerblue;
+                border-radius: 50%;
+            }
+        }
+    }
+}
