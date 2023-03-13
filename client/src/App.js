@@ -3,9 +3,9 @@ import Navbar from './Components/Navbar/Navbar';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 
-import Home from './Components/Home/Home';
-import Products from './Components/Products/Products';
-import Product from './Components/Product/Product';
+import Home from './pages/Home/Home';
+import Products from './pages/Products/Products';
+import Product from './pages/Product/Product';
 
 const router = createBrowserRouter([
   {
