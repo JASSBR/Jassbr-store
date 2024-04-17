@@ -39,14 +39,14 @@ function Cart() {
             <div className="info">
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <span className='price'>{product.quantity} x  $ {product.price}</span>
+                <span className='price'>{product.quantity} x  {product.price} MAD</span>
             </div>
             <span className='delete' onClick={()=>dispatch(removeItem(product.id))}><DeleteOutlineOutlinedIcon/></span>
         </div>
             )}
         <div className="total">
             <span>SUBTOTAL</span>
-            <span>$ {totalPrice()}</span>
+            <span>{totalPrice()} MAD</span>
         </div>
         <button className="process" onClick={handlePayment}>PROCEED TO CHECKOUT</button>
         <span className='reset' onClick={()=>dispatch(resetCart())}>Reset Cart</span>

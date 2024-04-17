@@ -10,7 +10,7 @@ import { addToCart } from '../../redux/cartReducer';
 
 const Product = () => {
     const id = parseInt(useParams().id);
-    const {data,loading,error} = useFetch(`/products/${id}?populate=*`);
+    const {data,loading} = useFetch(`/products/${id}?populate=*`);
         
 
     const [currentImage, setCurrentImage] = useState('image');
@@ -31,7 +31,7 @@ const Product = () => {
         </div>
         <div className="right">
         <h1>{data?.attributes?.title}</h1>
-        <span className='price'> $ {data?.attributes?.price} </span>
+        <span className='price'>{data?.attributes?.price} MAD</span>
         <p>{data?.attributes?.desc}</p>
         <div className="quantity">
         <button onClick={()=> setQuantity((prev)=> (prev === 1 ? 1 : prev -1 ))}>-</button>

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Card from '../Card/Card';
-import axios from 'axios';
 import './FeaturedProducts.scss';
 import useFetch from '../../hooks/useFetch';
 
@@ -17,10 +16,15 @@ function FeaturedProducts({type}) {
     <div className='featured'>
         <div className="top">
             <h1>{type} Products</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui perspiciatis autem ducimus, animi, recusandae veniam iure rerum vitae laborum possimus expedita quis vel maxime ullam numquam temporibus natus iusto d</p>
+            <p>
+The "Featured Products" section in a store app typically highlights a curated selection of products that are considered to be notable, popular, or currently promoted by the store. Here's a description of what this section usually entails:
+
+Featured Products
+
+The "Featured Products" section showcases a handpicked assortment of items carefully selected to capture the essence of our store's offerings. </p>
         </div>
         <div className="bottom">   
-            {error ? "Something went wrong" :(loading ? 'Loading' : data?.map(product => (<Card product={product} key={product.id}/>)))}
+            {error ? "Something went wrong" :(loading ? 'Loading' : data?.map(product => <Card product={product} key={product.id}/>))}
         </div>
     </div>
   )

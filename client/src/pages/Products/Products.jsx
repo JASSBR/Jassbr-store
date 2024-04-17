@@ -4,8 +4,6 @@ import List from '../../Components/List/List';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
-import axios from 'axios';
-import { makeRequest } from '../../makeRequest';
 
 const Products = () => {
 const catId = parseInt(useParams().id);
@@ -13,10 +11,11 @@ const [maxPrice,setMaxPrice] = useState(1000);
 const [sort,setSort] = useState(null);
 const [selectedSubCats,setSelectedSubCats] = useState([]);
 
-const {data,loading,error} = useFetch(`/sub-categories?populate=*&[filters][categories][id][$eq]=${catId}`);
-const res =  makeRequest.get(`/categories/${catId}?populate=*`);
+const {data} = useFetch(`/sub-categories?populate=*&[filters][categories][id][$eq]=${catId}`);
+const res =  useFetch(`/categories/${catId}?populate=*`);
 
 
+console.log(catId);
 console.log(res);
 const priceChange = (e) => {
     setMaxPrice(e.target.value);
@@ -68,7 +67,7 @@ const handleChange = (e) => {
 
         </div>
         <div className="right">
-                <img  className="cover" src={'http://localhost:1337/uploads/102556_5de59f4dfc.jpg'} alt="" />
+                <img  className="cover" src={'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt="" />
                 <List maxPrice={maxPrice} sort={sort || null} catId={catId} selectedSubCats={selectedSubCats}/>
         </div>
     </div>
